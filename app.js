@@ -10,6 +10,8 @@ const MONGODB_URI =
   "mongodb+srv://nthauit96:MxssdtqaZQ2noerN@cluster0.bs1do.mongodb.net/deploy";
 
 const app = express();
+
+app.set("trust proxy", 1);
 app.use(
   cors({
     origin: "https://session-client.vercel.app",
