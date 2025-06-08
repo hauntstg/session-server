@@ -29,7 +29,7 @@ exports.getData = (req, res, next) => {
   if (req.session.userId) {
     return res.json({ loggedIn: true, userId: req.session.userId });
   }
-  res.json({ loggedIn: false });
+  return res.status(401).json({ loggedIn: false });
 };
 
 exports.postLogout = (req, res, next) => {
