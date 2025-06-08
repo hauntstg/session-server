@@ -14,7 +14,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(
   cors({
-    origin: "session-client.vercel.app",
+    origin: "https://session-client.vercel.app",
     credentials: true,
   })
 );
