@@ -11,6 +11,7 @@ exports.postLogin = async (req, res, next) => {
         .json({ message: "Tài khoản hoặc mật khẩu không chính xác!" });
 
     req.session.userId = user._id;
+    console.log("session sau khi luu" + req.session);
     // req.session.save((err) => {
     //   if (err) {
     //     console.error("Session save error:", err);
@@ -26,6 +27,7 @@ exports.postLogin = async (req, res, next) => {
 };
 
 exports.getData = (req, res, next) => {
+  console.log("session data" + req.session);
   if (req.session.userId) {
     return res.json({ loggedIn: true, userId: req.session.userId });
   }
