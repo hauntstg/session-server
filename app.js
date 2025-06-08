@@ -10,14 +10,14 @@ const MONGODB_URI =
   "mongodb+srv://nthauit96:MxssdtqaZQ2noerN@cluster0.bs1do.mongodb.net/deploy";
 
 const app = express();
-app.use(express.urlencoded({ extended: false }));
-app.use(express.json());
 app.use(
   cors({
     origin: "https://session-client.vercel.app",
     credentials: true,
   })
 );
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 const store = new MongoDBStore({ uri: MONGODB_URI, collection: "sessions" });
 app.use(
   session({
